@@ -19,6 +19,7 @@
       }
     ],
     "paths": {
+      "@overview/*": ["./overview/*"], // I hate my life
       "@/*": ["./*"]
     }
   },
