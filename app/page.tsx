@@ -17,18 +17,24 @@ export default function Page() {
         <div className={styles.shape} />
 
           <p className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
-            <strong>Welcome to Cloudland</strong> This is the example for the{' '}
+            <strong>Welcome to Cloudland</strong> This is from the{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Learn Course
             </a>
-            , brought to you by Vercel.
+            , brought to you by 
           </p>
           <Link
+            href="https://www.maxjann.com"
+            className="flex items-center gap-5 self-start rounded-lg bg-purple-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-purple-400 md:text-base"
+          >
+            <span>Jann Software</span>
+          </Link>
+          {/* <Link
             href="/login"
             className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
           >
-            <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
-          </Link>
+            <span>Log in?</span> <ArrowRightIcon className="w-5 md:w-6" />
+          </Link> */}
           <Link
             href="/dashboard"
             className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
