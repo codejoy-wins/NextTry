@@ -1,4 +1,4 @@
-'use-client';
+'use client';
 
 import { lusitana } from '@/app/ui/fonts';
 import {
@@ -63,6 +63,15 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
+        <div className='red'>
+            <p>
+              You're welcome to use user@nextmail.com
+            </p>
+            <p>
+              Password is 123456
+            </p>
+        </div>
+
         <div
           className="flex h-8 items-end space-x-1"
           aria-live="polite"
