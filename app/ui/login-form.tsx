@@ -63,6 +63,9 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
+        <h1 className={`${lusitana.className} mb-3 text-2xl p-4`}>
+          Change for the Good
+        </h1>
         <div className='red'>
             <p>
               You're welcome to use user@nextmail.com
