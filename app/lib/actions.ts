@@ -96,8 +96,10 @@ export async function createInvoice(prevState: State, formData: FormData) {
 // createCustomer function needs work
   export async function createCustomer(prevState: State, formData: FormData) {
     console.log(`underconstruction function for customers.  form Data is ${formData}`);
+
     const validatedFields = CreateInvoice.safeParse({
       customerId: formData.get('customerId'),
+      // create the customerID for the new customer.  Check Name, Email and Image URL.
       amount: formData.get('amount'),
       status: formData.get('status'),
     });
