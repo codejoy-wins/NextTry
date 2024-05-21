@@ -93,6 +93,39 @@ export async function createInvoice(prevState: State, formData: FormData) {
   revalidatePath('dashboard/invoices');
   redirect('/dashboard/invoices');
   }
+// createCustomer function needs work
+  export async function createCustomer(prevState: State, formData: FormData) {
+    console.log(`underconstruction function for customers.  form Data is ${formData}`);
+    const validatedFields = CreateInvoice.safeParse({
+      customerId: formData.get('customerId'),
+      amount: formData.get('amount'),
+      status: formData.get('status'),
+    });
+    console.log(`valf is ${validatedFields}`);
+    if (!validatedFields.success) {
+      return {
+        errors: validatedFields.error.flatten().fieldErrors,
+        message: 'Missing Fields. Failed to Create Invoice.',
+      };
+    }
+    const { customerId, amount, status } = validatedFields.data;
+    const amountInCents = amount * 100;
+    const date = new Date().toISOString().split('T')[0];
+    // insert data to database
+    try {
+      await sql`
+        INSERT INTO invoices (customer_id, amount, status, date)
+        VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
+      `;
+      console.log("serious error");
+    } catch (error) {
+      return {
+        message: 'Database Error: Failed to Create Invoice.',
+      };
+    }
+  revalidatePath('dashboard/customers');
+  redirect('/dashboard/customers');
+  }
 
   const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
